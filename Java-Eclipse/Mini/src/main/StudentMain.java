@@ -1,8 +1,9 @@
 package main;
 
-import service.StudentReport;
+import service.*;
 import bean.Student;
 import exception.*;
+
 
 public class StudentMain {
 	
@@ -21,6 +22,8 @@ public class StudentMain {
 	
 	public static void main(String[] args) {
 		StudentReport studentReport = new StudentReport();
+		StudentService studentService = new StudentService();
+		
 		System.out.println("Grades Calculation: ");
 		
 		String x = null;
@@ -64,6 +67,10 @@ public class StudentMain {
 			System.out.println("Grade: " + x);
 			
 		}
+		
+		System.out.println("Number of objects with Marks array as null = " + studentService.findNumberOfNullMarks(data));
+		System.out.println("Number of objects with Name array as null = " + studentService.findNumberOfNullNames(data));
+		System.out.println("Number of objects that are entirely null = " + studentService.findNumberOfNullObjects(data));
 		
 	}
 }
