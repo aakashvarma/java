@@ -1,0 +1,7 @@
+CREATE TABLE employeedb(
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    job_ID INT,
+    hire_date DATE,
+    employee_ID INT
+);

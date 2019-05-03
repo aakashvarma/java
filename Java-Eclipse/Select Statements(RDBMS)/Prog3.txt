@@ -1,0 +1,16 @@
+CREATE TABLE employeedb(
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    job_ID INT,
+    hire_date DATE,
+    employee_ID INT
+);
+
+DESCRIBE employeedb;
+
+INSERT INTO employeedb VALUES('Aakash', 'Varma', 45985288, '1998-03-18', 101);
+INSERT INTO employeedb VALUES('Akhil', 'Reddy', 45976524, '1999-07-18', 102);
+INSERT INTO employeedb VALUES('Yash', 'Reddy', 45972345, '1997-02-03', 103);
+
+SELECT DISTINCT job_ID
+FROM employeedb;
