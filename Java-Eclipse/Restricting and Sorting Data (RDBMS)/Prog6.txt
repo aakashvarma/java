@@ -1,0 +1,4 @@
+SELECT last_name AS 'Employee', salary AS 'Monthly Salary'
+FROM employee
+WHERE salary BETWEEN 5000 AND 12000
+AND (dept_id = 20 OR dept_id = 50);

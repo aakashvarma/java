@@ -1,0 +1,4 @@
+SELECT last_name, dept_id
+FROM employee
+WHERE dept_id = 20 OR dept_id = 50
+ORDER BY name;

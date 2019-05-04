@@ -1,0 +1,4 @@
+SELECT emp_id, last_name, salary, dept_id
+FROM giraffe.employee
+WHERE manager = '&manager'
+ORDER BY '&column'; 

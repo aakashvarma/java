@@ -1,0 +1,4 @@
+SELECT last_name, salary, commissions
+FROM employee
+WHERE comission IS NOT NULL
+ORDER BY salary, commissions DESC;
