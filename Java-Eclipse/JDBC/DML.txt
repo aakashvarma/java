@@ -1,0 +1,15 @@
+1. Create table MY_EMPLOYEE as select employee_id,first_name,last_name,department_id,salary from EMPLOYEES where 1=2;
+2. describe MY_EMPLOYEE;
+3. insert into my_employee VALUES(201,'Michael','Hartstein',20,13000);
+4. insert into my_employee VALUES(202,'Pat','Fay',20,NULL);
+5. insert into my_employee VALUES(203,'Susan','Marvis',40,'');
+6. insert into my_employee VALUES(205,'Shelley','Higgins',110,12000);
+   insert into my_employee VALUES(100,'Steven','King',90,24000);
+   insert into my_employee VALUES(101,'Neena','Kochhar',90,17000);
+   insert into my_employee VALUES(102,'Lex De','Haan',90,17000);
+   insert into my_employee VALUES(111,'Ismael','Sciarra',100,7700);
+   insert into my_employee VALUES(112,'Jose Manuel','Urman',100,7800);
+   insert into my_employee VALUES(204,'Hermann','Baer',70,10000);
+7. update my_employee set salary=salary*1.10 where department_id=90;
+8. update my_employee set last_name='Higgins' where employee_id=202;
+9. DELETE from my_employee where (first_name LIKE '%man%') OR (last_name LIKE '%man%');

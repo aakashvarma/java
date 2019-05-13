@@ -1,0 +1,19 @@
+1. select last_name,salary from employees where salary>12000;
+2. select last_name, department_id from employees where employee_id=176;
+3. select last_name, salary from employees where salary NOT BETWEEN 5000 and 12000;
+4. select last_name, job_id, hire_date from employees where (last_name='Taylor' OR last_name='Matos') 
+   ORDER BY hire_date;
+5. select last_name, department_id from employees where (department_id=20 OR department_id=50) ORDER BY last_name;
+6. select first_name AS "Employee",salary AS "Monthly Salary" from employees
+   where (salary BETWEEN 5000 AND 12000)AND(department_id=20 OR department_id=50)
+   ORDER BY first_name;
+7. select last_name, hire_date from employees WHERE hire_date like '%94';
+8. select last_name, job_id from employees where manager_id IS NULL;
+9. select last_name, salary, commission_pct*salary AS "Commission" from employees where commission_pct IS NOT NULL 
+   ORDER BY 2, 3 DESC;
+10. SELECT last_name, salary from employees where salary>&salary_value;
+11. select employee_id,last_name,salary, department_id from employees where manager_id=&manager order BY &column_name;
+12. select last_name from employees where last_name LIKE '__a%';
+13. select last_name from employees where (last_name LIKE '%a%') and (last_name LIKE '%e%');
+14. select last_name, job_id, salary from employees where (job_id='SA_REP' OR job_id='ST_CLERK') 
+    and salary not IN(2500,3500,7000);

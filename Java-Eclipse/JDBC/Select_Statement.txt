@@ -1,0 +1,5 @@
+1. describe departments;
+2. select employee_id,last_name,job_id,hire_date AS STARTDATE from employees;
+3. select distinct job_id from employees;
+4. select employee_id "Emp #",last_name AS "Employee",job_id AS "Job",hire_date AS "Hire Date" from employees;
+5. select last_name ||', '||job_id AS "Employee and Title" from employees;

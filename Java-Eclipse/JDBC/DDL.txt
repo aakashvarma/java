@@ -1,0 +1,23 @@
+1. create table DEPT(Dept_Id NUMBER(7), Dept_Name VARCHAR2(20),PRIMARY KEY (Dept_Id));
+   DESC DEPT
+
+
+2. INSERT INTO DEPT SELECT department_id, department_name FROM departments;
+   insert into dept VALUES(10,'Accounts');
+   insert into dept VALUES(NULL,'TT');
+   INSERT INTO DEPT VALUES(20,'TT');
+   INSERT INTO DEPT VALUES(A1,'ACCOUNTS');
+   UPDATE DEPT SET dept_id=30 WHERE dept_name='Accounts';
+
+
+3. CREATE TABLE emp(ID NUMBER(7), 
+                LAST_NAME VARCHAR2(25) NOT NULL, 
+                FIRST_NAME VARCHAR2(25), 
+                DEPT_ID NUMBER(7), 
+                CONSTRAINT ID_PK PRIMARY KEY(ID),
+                CONSTRAINT MY_DEPT_ID_FK FOREIGN KEY(DEPT_ID) REFERENCES DEPARTMENTS(DEPARTMENT_ID));
+
+ INSERT INTO emp VALUES(101,'Sam','Sundar',10);
+ INSERT INTO emp VALUES(101,'Ram','Krishna',20);
+ INSERT INTO emp VALUES(102,'Gopi',NULL,40);
+ INSERT INTO emp VALUES(103,NULL,'Ram',20);
