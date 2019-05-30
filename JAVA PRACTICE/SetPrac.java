@@ -1,22 +1,23 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.TreeSet;
 
 class SetPrac{
     public static void main(String[] args){
-        HashSet<Integer> A = new HashSet<>();
+        HashSet<String> S1 = new HashSet<>();
 
-        A.add(34);
-        A.add(67);
-        A.add(23);
-        A.add(45);
-        A.add(12);
+        S1.add("Varma");
+        S1.add("Aakash");
+        S1.add("Nadimpalli");
 
-        System.out.println(A);
+        System.out.println(S1);
 
-        ArrayList<Integer> A1 = new ArrayList<>(A);
-        Collections.sort(A1, Collections.reverseOrder());
+        TreeSet<String> S2 = new TreeSet<>(S1);
 
-        System.out.println(A1);
+        System.out.println(S2);
+
+        
+
     }
 }

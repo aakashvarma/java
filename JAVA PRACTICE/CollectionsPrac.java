@@ -1,64 +1,62 @@
 import java.util.*;
 
-class Employee implements Comparable<Employee>{
+class Employee{
     int id;
     String name;
     int age;
-    String department;
 
-    Employee(int id, String name, int age, String department){
+    Employee(int id, String name, int age){
         this.id = id;
         this.name = name;
         this.age = age;
-        this.department = department;
     }
 
     @Override
     public String toString(){
-        return id + " " + name + " " + age + " " + department;
-    }
-
-    public int compareTo(Employee e){
-        if(age==e.age)  
-            return 0;  
-        else if(age>e.age)  
-            return 1;  
-        else  
-            return -1;  
+        return "[" + id + " " + name + " " + age + "]";
     }
 }
 
-class EmpList{
+class MakeMap{
 
-    ArrayList<Employee> A1 = new ArrayList<>();
+    HashMap<Integer, Employee> M1 = new HashMap<>();
 
-    public void addEmployee(Employee e){
-        A1.add(e);
-        System.out.println("Employee added.");
+    public void addKeyValue(int key, Employee value){
+        M1.put(key, value);
+        System.out.println("Key and value has been added to the hashmap.");
     }
 
-    public void deleteEmployee(int id){
-        Iterator<Employee> it = A1.iterator();
+    public void getValue(int key){
+        Employee value = (Employee)M1.get(key);
+        System.out.println("The vlaue for the corresponding " + key + " is: " + value);
+    }
+
+    public void deleteValue(int key){
+        M1.remove(key);
+        System.out.println("Removed a value.");
+    }
+
+    public void displayAll(){
+        Set s = M1.entrySet();
+        Iterator it = s.iterator();
         while(it.hasNext()){
-            Employee emp = (Employee)it.next();
-            if(emp.id == id) it.remove();
-        }
+            Map.Entry me = (Map.Entry)it.next();
+            System.out.println("Key: " + me.getKey() + ", Value: " + me.getValue());
+        }   
     }
 
-    public void displayAllEmployees(){
-        Collections.sort(A1);
-        System.out.println(A1);
-    }
 }
 
 class CollectionsPrac{
     public static void main(String[] args){
-        EmpList obj = new EmpList();
+        MakeMap obj = new MakeMap();
 
-        obj.addEmployee(new Employee(102, "Varma", 22, "IT"));
-        obj.addEmployee(new Employee(103, "Aakash", 21, "IT"));
-        obj.addEmployee(new Employee(101, "Nadimpalli", 20, "IT"));
+        obj.addKeyValue(101, new Employee(101, "Aakash", 21));
+        obj.addKeyValue(102, new Employee(102, "Varma", 21));
+        obj.addKeyValue(103, new Employee(103, "Vamshi", 19));
+        obj.addKeyValue(104, new Employee(104, "Yash", 22));
+        obj.addKeyValue(105, new Employee(105, "Akhil", 20));
 
-        obj.displayAllEmployees();
+        obj.displayAll();
     }
 }
