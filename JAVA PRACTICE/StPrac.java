@@ -51,7 +51,19 @@
 //     }
 // }
 
+import java.util.*;
 
 class StPrac{
-    
+    public static void main(String[] args){
+        StringBuffer sb = new StringBuffer();
+        String str = "ashgdavdahedsahsskjakhdjahsuagbka";
+        String[] arr = str.split("a", 0);
+
+        for(int i = 0; i < arr.length; i++){
+            System.out.println(arr[i]);
+            sb.append(arr[i]);
+        }
+        System.out.println(String.valueOf(sb));
+        System.out.println(String.valueOf(sb.reverse()));
+    }
 }
