@@ -1,26 +1,47 @@
-import java.util.*;
+class Node{
+    int value;
+    Node left, right;
 
-class Tree{
-    public static void main(String[] args){
-        TreeMap<String, Integer> map = new TreeMap<String, Integer>();
-        map.put("one", 1);
-        map.put("two", 2);
-        map.put("three", 3);
-        map.put("four", 4);
+    Node(int value){
+        this.value = value;
+        left = right = null;
+    }
+}
 
-        Set set = map.entrySet();
+public class Tree{
 
-        System.out.println(set);
+    Node root;
 
-        Iterator it = set.iterator();
-        while(it.hasNext()){
-            Map.Entry m = (Map.Entry)it.next();
-            System.out.println(m.getKey() + " : " + m.getValue());
+    private Node addRecursive(Node current, int value){
+        if(current == null){
+            return new Node(value);
+        }
+        if(value < current.value){
+            current.left = addRecursive(current.value, value);
+        }
+        else if(value > current.value){
+            current.right = addRecursive(current.value, value);
         }
 
-        map.remove("one");
-        System.out.println(map.get("one"));
+        return current;
 
-        System.out.println(map);
+    }
+
+    public void add(int value){
+        root = addRecursive(root, value);
+    }
+
+    private Tree createBinartTree(){
+        Tree bt = new Tree();
+
+        bt.add(6);
+        bt.add(4);
+        bt.add(8);
+        bt.add(3);
+        bt.add(5);
+        bt.add(7);
+        bt.add(9);
+    
+        return bt;
     }
 }
